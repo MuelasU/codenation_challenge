@@ -66,15 +66,13 @@ request(getReqOptions, (err, res, body) => {
 
             //Create a form to post
             var form = {
-                    answer: {
-                        value: fs.createReadStream(__dirname + '/answer.json'),
-                        options: {
-                            contentType: 'multipart/form-data'
-                        }
+                answer: {
+                    value: fs.createReadStream(__dirname + '/answer.json'),
+                    options: {
+                        contentType: 'multipart/form-data'
                     }
                 }
-                // var form = new FormData();
-                // form.append('answer', fs.createReadStream(__dirname + '/answer.json'));
+            }
             postReqOptions.formData = form;
 
             //Post the file to the API
