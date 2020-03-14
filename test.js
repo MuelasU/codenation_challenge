@@ -7,14 +7,14 @@ function Decrypt(num_casas, msg) {
             console.log("So I don't matter");
             result += msg[i];
         } else {
-            var numNewCharInAlpha = numOldCharInAlpha + num_casas;
-            console.log('Incrementing, I become ' + numNewCharInAlpha);
-            if (numNewCharInAlpha > 122) {
-                console.log('But I am more than 122');
-                var resto = numNewCharInAlpha - 122;
-                console.log('Me - 122 = ' + resto);
-                numNewCharInAlpha = 96 + resto;
-                console.log('So, incrementing in 96, I become: ' + numNewCharInAlpha);
+            var numNewCharInAlpha = numOldCharInAlpha - num_casas;
+            console.log('Decrementing, I become ' + numNewCharInAlpha);
+            if (numNewCharInAlpha < 97) {
+                console.log('But I am less than 97');
+                var resto = 97 - numNewCharInAlpha;
+                console.log('97 - Me = ' + resto);
+                numNewCharInAlpha = 123 - resto;
+                console.log('So, decrementing in 123, I become: ' + numNewCharInAlpha);
             }
             var newChar = String.fromCharCode(numNewCharInAlpha);
             console.log('In ASCII table, I am represented by "' + newChar + '"');

@@ -31,10 +31,10 @@ function Decrypt(num_casas, msg) {
         if (numOldCharInAlpha > 122 || numOldCharInAlpha < 97) {
             result += msg[i];
         } else {
-            var numNewCharInAlpha = numOldCharInAlpha + num_casas;
-            if (numNewCharInAlpha > 122) {
-                var resto = numNewCharInAlpha - 122;
-                numNewCharInAlpha = 96 + resto;
+            var numNewCharInAlpha = numOldCharInAlpha - num_casas;
+            if (numNewCharInAlpha < 97) {
+                var resto = 97 - numNewCharInAlpha;
+                numNewCharInAlpha = 123 - resto;
             }
             var newChar = String.fromCharCode(numNewCharInAlpha);
             result += newChar;
